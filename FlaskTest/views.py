@@ -3,7 +3,7 @@ Routes and views for the flask application.
 """
 
 from flask import render_template
-from arappsmg import app
+from FlaskTest import app
 
 
 
