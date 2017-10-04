@@ -24,30 +24,16 @@
 
 # to do 
 # 1. run it on a real phone using github
-# 2. 
-#
-#
-#
 
 
 
 # import relevant libraries 
 from flask import Flask, render_template, flash, redirect, url_for, session, logging, request, json
-from data import Articles
-from sqlalchemy import exc
-from wtforms import Form, StringField, TextAreaField, PasswordField, validators
-from functools import wraps
-from werkzeug import secure_filename
 import os
-import jsonschema
-from jsonschema import validate
+
 
 # create an empty app structure
 app = Flask(__name__)
-
-
-#Global Vars
-Static_URL = 'http://localhost:5000/static/'
 
 
 
