@@ -1,0 +1,59 @@
+{% extends 'layouts.html' %}
+
+
+{% block body %}
+
+
+<var hidden id="staticurl">{{ Static_URL }}</var>
+<var hidden id="spec">{{ spec }}</var>
+<var hidden id="cadurl">{{ Cad_URL }}</var>
+
+
+	<h3>Your Digital Twin in WebGL</h3>
+	
+		<div id="container" >
+				<div style = "float: left; width : 40%" id="buttongroup-content" class="overlay-content">
+					<button id="wsbutton" type="button">Use Websocket</button>
+					<button id="consbutton" type="button">Use Console</button>
+				</div>
+				<div style = "float: left; width : 60%; display:none" id="wsoverlay-content" class="overlay-content">
+					<form id="wsform">
+						Websocket URI: <input type="text" name="WebURI_text" value="ws://127.0.0.1:8080">
+						<button id="wsConnect" type="button">Connect</button> <br>
+						
+					</form>
+				</div>
+		</div>
+
+		<div id="container1">
+			<div id="ConnectStatus"> NO CONNECTION! </div>
+		</div>
+
+
+
+<!--variables-->
+
+
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'three.js') }}"></script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'dat.gui.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'DragControls.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'OBJLoader.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'OrbitControls.js') }}"></script>
+<!--<script type="text/javascript" src="{{ url_for('static', filename = 'stats.min.js') }}"></script>-->
+<script type="text/javascript" src="{{ url_for('static', filename = 'TrackballControls.js') }}"></script>
+<script>
+                var module = module || {}; //Make work outside of NPM module env
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'almost_equal.js') }}"></script>
+
+   
+<script type="text/javascript" src="{{ url_for('static', filename = 'twin_webgl.js') }}"></script>
+
+
+<canvas id = "canvas" style="height: 1px;width: 1px"></canvas>
+<div id = "moveGUI1" style="position: absolute; top: 3em; right: 0em;"></div>
+
+
+{% endblock %}
